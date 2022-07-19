@@ -20,7 +20,7 @@ public class Utility {
 
     public static boolean isMacExists(String mac){
         try {
-            PreparedStatement psmt = DBConnection.getConnection().prepareStatement("SELECT * from HW_INFO WHERE MAC = ?");
+            PreparedStatement psmt = DBConnection.getConnection().prepareStatement("SELECT * from HW_INFO WHERE MAC_ADDRESS = ?");
             psmt.setString(1, mac);
             ResultSet rs = psmt.executeQuery();
             return rs.next();
